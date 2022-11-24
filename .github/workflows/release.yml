@@ -11,6 +11,8 @@ jobs:
 
     strategy:
       fail-fast: false
+      matrix:
+        machine: [raspberrypi3-64, raspberrypi4-64, reterminal-64 ]
       
     steps:
       - name: Clone repository
@@ -19,9 +21,14 @@ jobs:
       - name: Clone required dependencies
         run: ./repo-mgr.sh init
       
-      - name: Run build
-        run: ./run-build.sh
+      - name: Source build environment
+        run:  source ./poky/oe-init-build-env build
       
+      - name: Build Yocto images
+        run:  |
+          MACHINE=${{ matrix.machine }} bitbake bitbake dotnet-image-minimal --dry-run
+          MACHINE=${{ matrix.machine }} bitbake bitbake dotnet-image-full --dry-run
+            
       - name: Disk space report after build
         run: |
           echo "Memory and swap:"
