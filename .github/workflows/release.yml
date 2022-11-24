@@ -4,11 +4,7 @@ on:
   release:
     branches: 
     - main
-    types: [published]
-
-env:
-  GITHUB_TOKEN: ${{ github.token }}
-
+    
 jobs:
   machine-matrix:
     runs-on: self-hosted
