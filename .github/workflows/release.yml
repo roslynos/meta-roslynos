@@ -25,12 +25,12 @@ jobs:
       - name: Build Yocto images
         run:  |
           source ./poky/oe-init-build-env build
-          MACHINE=raspberrypi3-64 bitbake dotnet-image-minimal --dry-run
-          MACHINE=raspberrypi3-64 bitbake dotnet-image-full --dry-run
-          MACHINE=raspberrypi4-64 bitbake dotnet-image-minimal --dry-run
-          MACHINE=raspberrypi4-64 bitbake dotnet-image-full --dry-run
-          MACHINE=reterminal-64 bitbake dotnet-image-minimal --dry-run
-          MACHINE=reterminal-64 bitbake dotnet-image-full --dry-run
+          MACHINE='raspberrypi3-64' bitbake dotnet-image-minimal --dry-run
+          MACHINE='raspberrypi3-64' bitbake dotnet-image-full --dry-run
+          MACHINE='raspberrypi4-64' bitbake dotnet-image-minimal --dry-run
+          MACHINE='raspberrypi4-64' bitbake dotnet-image-full --dry-run
+          MACHINE='reterminal-64' bitbake dotnet-image-minimal --dry-run
+          MACHINE='reterminal-64' bitbake dotnet-image-full --dry-run
         
       - name: Create the package index
         run:  bitbake package-index
