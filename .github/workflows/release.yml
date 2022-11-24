@@ -16,9 +16,17 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
 
-      - name: Install required dependencies
+      - name: Clone required dependencies
         run: ./repo-mgr.sh init
-
+            
+      - name: Build Yocto images
+        run:  |
+          source ./poky/oe-init-build-env build
+          bitbake dotnet-image-minimal --dry-run
+          
+      - name: Create the package index
+        run:  bitbake package-index
+        
       - name: Disk space report after build
         run: |
           echo "Memory and swap:"
