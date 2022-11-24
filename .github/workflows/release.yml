@@ -11,8 +11,6 @@ jobs:
 
     strategy:
       fail-fast: false
-      matrix:
-        machine: [raspberrypi3-64, raspberrypi4-64, reterminal-64 ]
       
     steps:
       - name: Clone repository
@@ -26,8 +24,13 @@ jobs:
       
       - name: Build Yocto images
         run:  |
-          MACHINE=${{ matrix.machine }} bitbake bitbake dotnet-image-minimal --dry-run
-          MACHINE=${{ matrix.machine }} bitbake bitbake dotnet-image-full --dry-run
+          source ./poky/oe-init-build-env build
+          MACHINE=raspberrypi3-64 bitbake bitbake dotnet-image-minimal --dry-run
+          MACHINE=raspberrypi3-64 bitbake bitbake dotnet-image-full --dry-run
+          MACHINE=raspberrypi4-64 bitbake bitbake dotnet-image-minimal --dry-run
+          MACHINE=raspberrypi4-64 bitbake bitbake dotnet-image-full --dry-run
+          MACHINE=reterminal-64 bitbake bitbake dotnet-image-minimal --dry-run
+          MACHINE=reterminal-64 bitbake bitbake dotnet-image-full --dry-run
             
       - name: Disk space report after build
         run: |
