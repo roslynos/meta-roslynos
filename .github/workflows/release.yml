@@ -15,38 +15,30 @@ jobs:
 
     strategy:
       fail-fast: false
-      matrix:
-        machine: [rterminal-image]
-
+      
     steps:
       - name: Clone repository
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v3  
+        
       - name: Extract build information into variables
-      id: info
-      run: |
-        echo "##[set-output name=version;]$(echo $env:GITHUB_REF.Replace('refs/tags/v',''))"
-        echo "##[set-output name=build;]$(echo $(git rev-list --count HEAD))"
+        id: info
+        run: |
+          echo "##[set-output name=version;]$(echo $env:GITHUB_REF.Replace('refs/tags/v',''))"
+          echo "##[set-output name=build;]$(echo $(git rev-list --count HEAD))"
     
-    - name: Show release event information
-      run: |
-        echo "release.name        = ${{ github.event.release.name }}"
-        echo "release.body        = ${{ github.event.release.body }}"
-        echo "release.upload_url  = ${{ github.event.release.upload_url }}"
-        echo "release.html_url    = ${{ github.event.release.html_url }}"
-        echo "release.tag_name    = ${{ github.event.release.tag_name }}"
-        echo "release.draft       = ${{ github.event.release.draft }}"
-        echo "release.prerelease  = ${{ github.event.release.prerelease }}"
+      - name: Show release event information
+        run: |
+          echo "release.name        = ${{ github.event.release.name }}"
+          echo "release.body        = ${{ github.event.release.body }}"
+          echo "release.upload_url  = ${{ github.event.release.upload_url }}"
+          echo "release.html_url    = ${{ github.event.release.html_url }}"
+          echo "release.tag_name    = ${{ github.event.release.tag_name }}"
+          echo "release.draft       = ${{ github.event.release.draft }}"
+          echo "release.prerelease  = ${{ github.event.release.prerelease }}"
 
       - name: Show build information
         run: |
           echo build=${{ steps.info.outputs.build }}
-
-      - name: Install required dependencies
-        run: ./repo-mgr.sh install
-
-      - name: Clone required yocto repos
-        run: ./repo-mgr.sh init
 
       - name: Disk space report after build
         run: |
