@@ -18,10 +18,7 @@ jobs:
 
       - name: Clone required dependencies
         run: ./repo-mgr.sh init
-      
-      - name: Source build environment
-        run:  source ./poky/oe-init-build-env build
-      
+            
       - name: Build Yocto images
         run:  |
           source ./poky/oe-init-build-env build
@@ -31,7 +28,7 @@ jobs:
           MACHINE='raspberrypi4-64' bitbake dotnet-image-full --dry-run
           MACHINE='reterminal-64' bitbake dotnet-image-minimal --dry-run
           MACHINE='reterminal-64' bitbake dotnet-image-full --dry-run
-        
+          
       - name: Create the package index
         run:  bitbake package-index
         
