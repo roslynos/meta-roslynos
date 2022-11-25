@@ -30,10 +30,6 @@ jobs:
       - name: Clone required dependencies
         run: ./repo-mgr.sh init
       
-      - name: Show build information
-        run: |
-          echo build=${{ steps.info.outputs.build }}
-
       - name: Run build
         run: ./run-build.sh
                 
