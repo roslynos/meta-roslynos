@@ -19,14 +19,18 @@ jobs:
       - name: Clone required dependencies
         run: ./repo-mgr.sh init
             
-      - name: Build Yocto images
-        run:  |
-          source ./poky/oe-init-build-env build
-          bitbake dotnet-image-minimal --dry-run
+      - name: Run build
+        run: ./run-build.sh
           
       - name: Create the package index
         run:  bitbake package-index
-        
+      
+      - name: Save build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          path: ./build/tmp/deploy/images/*/*.rootfs.wic.bz
+          retention-days: 5
+
       - name: Disk space report after build
         run: |
           echo "Memory and swap:"

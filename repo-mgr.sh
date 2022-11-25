@@ -44,6 +44,11 @@ _parse_conf() {
     repo_branch=( $(grep ^repository $conf_file | cut -d ',' -f4) )
 }
 
+locale() {
+    sudo apt-get install language-pack-en
+    locale-gen en_US.UTF-8
+}
+
 install() {
     echo -e "Installing dependencies\n"
     sudo apt-get update
