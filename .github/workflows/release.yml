@@ -35,7 +35,9 @@ jobs:
         run: ./run-build.sh
 
       - name: Make file
-        run: echo 'Random sample text' > ./build/tmp/deploy/images/raspberrypi3-64/imagename.rootfs.wic.gz
+        run: |
+          mkdir -p ./build/tmp/deploy/images/raspberrypi3-64/
+          echo 'Random sample text' > ./build/tmp/deploy/images/raspberrypi3-64/imagename.rootfs.wic.gz
 
       - name: Save build artifacts
         uses: actions/upload-artifact@v3
