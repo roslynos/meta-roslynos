@@ -33,12 +33,21 @@ jobs:
       
       - name: Run build
         run: ./run-build.sh
-                
+
+      - name: Make file
+        run: echo 'Random sample text' > ./build/tmp/deploy/images/raspberrypi3-64/imagename.rootfs.wic.gz
+
       - name: Save build artifacts
         uses: actions/upload-artifact@v3
         with:
           path: ./build/tmp/deploy/images/*/*.rootfs.wic.gz
           retention-days: 5
+
+      - name: Upload release images
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: ./build/tmp/deploy/images/*/*.rootfs.wic.gz
 
       - name: Disk space report after build
         run: |
