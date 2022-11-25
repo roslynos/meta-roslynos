@@ -4,6 +4,7 @@ on:
   push:
     branches: 
     - main
+    types: [published]
     
 jobs:
   machine-matrix:
@@ -16,9 +17,6 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
 
-      - name: Clone required dependencies
-        run: ./repo-mgr.sh init
-
       - name: Show release event information
         run: |
           echo "release.name        = ${{ github.event.release.name }}"
@@ -28,6 +26,9 @@ jobs:
           echo "release.tag_name    = ${{ github.event.release.tag_name }}"
           echo "release.draft       = ${{ github.event.release.draft }}"
           echo "release.prerelease  = ${{ github.event.release.prerelease }}"
+
+      - name: Clone required dependencies
+        run: ./repo-mgr.sh init
       
       - name: Show build information
         run: |
