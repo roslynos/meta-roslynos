@@ -8,7 +8,7 @@ BUILD_DIR="build"
 source ./poky/oe-init-build-env $BUILD_DIR
 
 # Build
-# MACHINE=raspberrypi3-64 bitbake dotnet-image-minimal --dry-run
+MACHINE=raspberrypi3-64 bitbake dotnet-image-minimal
 # MACHINE=raspberrypi3-64 bitbake dotnet-image-full --dry-run
 # MACHINE=raspberrypi4-64 bitbake dotnet-image-minimal --dry-run
 # MACHINE=raspberrypi4-64 bitbake dotnet-image-full --dry-run
