@@ -9,6 +9,7 @@ on:
 jobs:
   machine-matrix:
     runs-on: self-hosted
+    timeout-minutes: 720
 
     strategy:
       fail-fast: false
