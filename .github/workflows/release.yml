@@ -20,14 +20,14 @@ jobs:
         run: ./repo-mgr.sh init
 
       - name: Show release event information
-      run: |
-        echo "release.name        = ${{ github.event.release.name }}"
-        echo "release.body        = ${{ github.event.release.body }}"
-        echo "release.upload_url  = ${{ github.event.release.upload_url }}"
-        echo "release.html_url    = ${{ github.event.release.html_url }}"
-        echo "release.tag_name    = ${{ github.event.release.tag_name }}"
-        echo "release.draft       = ${{ github.event.release.draft }}"
-        echo "release.prerelease  = ${{ github.event.release.prerelease }}"
+        run: |
+          echo "release.name        = ${{ github.event.release.name }}"
+          echo "release.body        = ${{ github.event.release.body }}"
+          echo "release.upload_url  = ${{ github.event.release.upload_url }}"
+          echo "release.html_url    = ${{ github.event.release.html_url }}"
+          echo "release.tag_name    = ${{ github.event.release.tag_name }}"
+          echo "release.draft       = ${{ github.event.release.draft }}"
+          echo "release.prerelease  = ${{ github.event.release.prerelease }}"
       
       - name: Show build information
         run: |
