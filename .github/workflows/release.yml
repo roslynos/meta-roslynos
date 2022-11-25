@@ -1,4 +1,4 @@
-name: Release
+name: Bitbake Release
 
 on:
   release:
@@ -37,7 +37,7 @@ jobs:
       - name: Save build artifacts
         uses: actions/upload-artifact@v3
         with:
-          path: ./build/tmp/deploy/images/*/*.rootfs.wic.bz
+          path: ./build/tmp/deploy/images/*/*.rootfs.wic.gz
           retention-days: 5
 
       - name: Disk space report after build
