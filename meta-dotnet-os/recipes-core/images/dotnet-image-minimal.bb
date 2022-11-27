@@ -9,7 +9,11 @@ include recipes-core/images/core-image-minimal.bb
 # Setup default user and passwords
 inherit deviceos-users
 
-IMAGE_INSTALL:remove = "top"
+# Do a quiet boot with limited console messages
+APPEND += "rootfstype=ext4 quiet"
+AUTO_SYSLINUXMENU = "0"
+SYSLINUX_PROMPT ?= "0"
+SYSLINUX_TIMEOUT ?= "0"
 
 # Additional application configuration
 CORE_IMAGE_EXTRA_INSTALL += "\
