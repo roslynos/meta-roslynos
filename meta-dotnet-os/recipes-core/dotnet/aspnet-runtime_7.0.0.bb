@@ -12,9 +12,19 @@ INSANE_SKIP:${PN} = "already-stripped libdir staticdev"
 
 DEPENDS = "patchelf-native"
 
+# RDEPENDS:${PN} = "\
+#     icu \
+#     libgssapi-krb5 \
+#     openssl \
+#     zlib \
+# "
+
 RDEPENDS:${PN} = "\
+    glibc \
     icu \
-    libgssapi-krb5 \
+    krb5 \
+    libgcc \
+    libstdc++ \
     openssl \
     zlib \
 "
