@@ -17,7 +17,6 @@ RDEPENDS:${PN} = "\
     less \
     procps \
     strace \
-    tar \
     usbutils \
     util-linux \
     git \

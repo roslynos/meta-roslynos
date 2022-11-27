@@ -10,12 +10,14 @@ PACKAGES = "\
 	roslynos-base-packagegroup \
 	roslynos-base-connectivity \
 	roslynos-base-gpio \
-	roslynos-base-utilities"
+	roslynos-base-utilities \
+	roslynos-base-remotehost"
 
 RDEPENDS:${PN} = "\
 	roslynos-base-connectivity \
 	roslynos-base-gpio \
-	roslynos-base-utilities"
+	roslynos-base-utilities \
+	roslynos-base-remotehost"
 
 SUMMARY:roslynos-base-connectivity = "Connectivity Packages"
 RDEPENDS:roslynos-base-connectivity = "\
@@ -24,9 +26,7 @@ RDEPENDS:roslynos-base-connectivity = "\
 	openssh \ 
 	openssh-sftp-server \
 	openssl \
-	ufw \
 	iptables \
-	htop \
 	curl"
 
 SUMMARY:roslynos-base-gpio = "Gpio Packages"
@@ -38,6 +38,14 @@ RDEPENDS:roslynos-base-gpio = "\
 SUMMARY:roslynos-base-utilities = "General Packages"
 RDEPENDS:roslynos-base-utilities = "\
 	iw \
+	ufw \
 	bash \
+	tar \
 	nano \
 	sudo"
+
+SUMMARY:roslynos-base-remotehost = "Visual Studio Code Remote SSH"
+RDEPENDS:roslynos-base-remotehost = "\
+	ldd \
+	procps \
+	coreutils"
