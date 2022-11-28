@@ -2,10 +2,10 @@
 
 OpenEmbedded layer that provides the basis of RoslynOS
 
-# Supported Single Board Computers
-Raspberrypi 3
-Raspberrypi 4
-Seeed ReTerminal
+## Supported Single Board Computers
+- Raspberrypi 3
+- Raspberrypi 4
+- Seeed ReTerminal
 
 # Give a Star! :star:
 
