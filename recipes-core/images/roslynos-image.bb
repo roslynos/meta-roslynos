@@ -1,4 +1,4 @@
-SUMMARY = "A minimal console-only runtime image for the Raspberry Pi devices"
+SUMMARY = "A minimal console-only runtime image for Raspberry Pi devices"
 HOMEPAGE = "https://www.raspberrypi.com/"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
@@ -58,9 +58,3 @@ rootfs_postprocess() {
 }
 
 ROOTFS_POSTPROCESS_COMMAND += "rootfs_postprocess;"
-
-# IMAGE_INSTALL:append = " watchdog "
-# RPI_EXTRA_CONFIG = ' \n \
-#     # Raspberry Pi Watchdog \n \
-#     dtparam=watchdog=on \n \
-#     '
