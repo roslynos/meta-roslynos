@@ -15,12 +15,4 @@ BBLAYERS ?= " \
   ##OEROOT##/poky/meta-openembedded/meta-python \
   ##OEROOT##/poky/meta-openembedded/meta-multimedia \
   ##OEROOT##/poky/meta-openembedded/meta-networking \
-  "
-
-  BBLAYERS_NON_REMOVABLE ?= " \
-  ##OEROOT##/meta \
-  ##OEROOT##/meta-poky \
-  ##OEROOT##/meta-openembedded/meta-oe \
-  ##OEROOT##/meta-openembedded/meta-networking \
-  ##OEROOT##/meta-openembedded/meta-python \
-  "
+"
