@@ -54,6 +54,8 @@ PACKAGES = " \
 	packagegroup-base-ap \ 
 	packagegroup-base-dotnet \
 	packagegroup-base-vscode \
+	packagegroup-base-gpio \
+	packagegroup-base-can \
 "
 
 # ${CONNECTIVITY_FIRMWARES}
@@ -64,20 +66,18 @@ RDEPENDS:${PN} = " \
 	packagegroup-base-ap \
 	packagegroup-base-dotnet \
 	packagegroup-base-vscode \
+	packagegroup-base-gpio \
+	packagegroup-base-can \
 "
 
 RDEPENDS:packagegroup-roslynos-core = "\
-	libgpiod \
-	libgpiod-dev \
-	libgpiod-tools \
 	iptables \
-	iw \
 	htop \
-	iotop \
 	nano \
 	sudo"
 
 RDEPENDS:packagegroup-base-ap = "\
+	iw \
 	hostapd \
 	dnsmasq"
 
@@ -90,3 +90,12 @@ RDEPENDS:packagegroup-base-vscode = "\
 	glibc \
 	libstdc++ \
 	procps"
+
+RDEPENDS:packagegroup-base-gpio = "\
+	libgpiod \
+	libgpiod-dev \
+	libgpiod-tools"
+
+RDEPENDS:packagegroup-base-can = "\
+	can-utils \
+	libsocketcan"
