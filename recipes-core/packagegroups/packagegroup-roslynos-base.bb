@@ -99,3 +99,8 @@ RDEPENDS:packagegroup-base-gpio = "\
 RDEPENDS:packagegroup-base-can = "\
 	can-utils \
 	libsocketcan"
+
+# TODO: Other possable software
+# usbip-tools
+# usbutils
+# cpupower 
