@@ -10,7 +10,7 @@
 You can now run 'MACHINE=<machine> bitbake roslynos-image'
 
 Common machine targets are:
-    MACHINE=raspberrypi0-2w-64 bitbake roslynos-image
     MACHINE=raspberrypi3-64 bitbake roslynos-image
     MACHINE=raspberrypi4-64 bitbake roslynos-image
+    MACHINE=raspberrypi0-2w-64 bitbake roslynos-image
 

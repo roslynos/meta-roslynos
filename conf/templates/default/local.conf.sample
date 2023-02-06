@@ -7,9 +7,6 @@ DISTRO ?= "roslynos"
 # Package Management configuration
 PACKAGE_CLASSES ?= "package_ipk"
 
-# Set host name for using the PR service
-PRSERV_HOST = "huxley:8585" 
-
 # Enable opkg package managment features 
 PACKAGE_FEED_URIS = "http://whisk.roslynos.com"
 PACKAGE_FEED_BASE_PATHS = "ipk"
@@ -36,7 +33,7 @@ LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
 
 # Enable wic format for flashing to 16GB sdcard
 WKS_FILE = "rpi-boot-image.wks"
-IMAGE_FSTYPES = "wic wic.bmap wic.gz"
+IMAGE_FSTYPES = "wic.bmap wic.gz"
 
 # Disk Space Monitoring during the build
 BB_DISKMON_DIRS ??= "\
