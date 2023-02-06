@@ -83,7 +83,9 @@ RDEPENDS:packagegroup-base-ap = "\
 
 RDEPENDS:packagegroup-base-dotnet = "\
 	vsdbg \
-    aspnet-runtime"
+    dotnet-sdk \
+	dotnet-sdk-dev \
+	dotnet-sdk-dbg"
 
 RDEPENDS:packagegroup-base-vscode = "\
 	ldd \

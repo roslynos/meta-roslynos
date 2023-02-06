@@ -38,7 +38,12 @@ FILES:${PN} += "\
     ${datadir}/dotnet \
 "
 
+FILES:${PN}-dbg = "\
+    ${datadir}/dotnet/.debug \
+"
+
 INSANE_SKIP:${PN} = "file-rdeps libdir"
+INSANE_SKIP:${PN}-dbg = "libdir"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"

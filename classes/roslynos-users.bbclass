@@ -1,7 +1,7 @@
 inherit extrausers
 
 USER_ID ?= "1100"
-USER_NAME ??= "gumshoe"
+USER_NAME ??= "kai"
 USER_PASSWORD ??= "dotnet"
 USER_PASSWORD_ENCRYPTED ??= "$(openssl passwd -6 ${USER_PASSWORD})"
 

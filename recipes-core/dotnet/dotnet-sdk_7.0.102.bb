@@ -35,7 +35,18 @@ FILES:${PN} += "\
     ${datadir}/dotnet \
 "
 
+FILES:${PN}-dev = "\
+    ${datadir}/dotnet/sdk \
+    ${datadir}/dotnet/sdk-manifests \
+    ${datadir}/dotnet/templates \
+"
+
+FILES:${PN}-dbg = "\
+    ${datadir}/dotnet/.debug \
+"
+
 INSANE_SKIP:${PN} = "file-rdeps staticdev libdir"
+INSANE_SKIP:${PN}-dbg = "libdir"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"

@@ -35,7 +35,7 @@ PATCHRESOLVE = "noop"
 LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
 
 # Enable wic format for flashing to 16GB sdcard
-WKS_FILE = "sdhc-rpi-16gb.wks"
+WKS_FILE = "rpi-boot-image.wks"
 IMAGE_FSTYPES = "wic wic.bmap wic.gz"
 
 # Disk Space Monitoring during the build
