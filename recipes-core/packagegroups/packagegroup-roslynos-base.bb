@@ -78,8 +78,7 @@ RDEPENDS:packagegroup-roslynos-core = "\
 
 RDEPENDS:packagegroup-base-ap = "\
 	iw \
-	hostapd \
-	dnsmasq"
+	hostapd"
 
 RDEPENDS:packagegroup-base-dotnet = "\
 	vsdbg \

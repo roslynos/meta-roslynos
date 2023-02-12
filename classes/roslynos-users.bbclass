@@ -27,8 +27,8 @@ EXTRA_USERS_PARAMS = "\
 "
 
 # enable access to sudo group in the sudoers file
-enable_sudo_group() {
-    sed -i 's/^#\s*\(%sudo\s*ALL=(ALL:ALL)\s*ALL\)/\1/' ${IMAGE_ROOTFS}/etc/sudoers
-}
+# enable_sudo_group() {
+#    sed -i 's/^#\s*\(%sudo\s*ALL=(ALL:ALL)\s*ALL\)/\1/' ${IMAGE_ROOTFS}/etc/sudoers
+# }
 
-ROOTFS_POSTPROCESS_COMMAND += "enable_sudo_group;"
+# ROOTFS_POSTPROCESS_COMMAND += "enable_sudo_group;"

@@ -32,7 +32,7 @@ CORE_IMAGE_EXTRA_INSTALL += "\
     packagegroup-roslynos-base \
 "
 
-PACKAGE_EXCLUDE += "python"
+PACKAGE_EXCLUDE += "perl"
 
 # perform some changes to the rootfs
 rootfs_postprocess() {
@@ -49,12 +49,12 @@ rootfs_postprocess() {
     # fi
 
     # aliases
-	touch ${IMAGE_ROOTFS}/etc/profile
-	echo alias 'l="ls -l"' >> ${IMAGE_ROOTFS}/etc/profile
-	echo alias 'll="ls -lag"' >> ${IMAGE_ROOTFS}/etc/profile
-    echo alias 'ipkg="opkg"' >> ${IMAGE_ROOTFS}/etc/profile
-    echo alias 'md=mkdir' >> ${IMAGE_ROOTFS}/etc/profile
-    echo alias 'rd=rmdir' >> ${IMAGE_ROOTFS}/etc/profile  
+	# touch ${IMAGE_ROOTFS}/etc/profile
+	# echo alias 'l="ls -l"' >> ${IMAGE_ROOTFS}/etc/profile
+	# echo alias 'll="ls -lag"' >> ${IMAGE_ROOTFS}/etc/profile
+    # echo alias 'ipkg="opkg"' >> ${IMAGE_ROOTFS}/etc/profile
+    # echo alias 'md=mkdir' >> ${IMAGE_ROOTFS}/etc/profile
+    # echo alias 'rd=rmdir' >> ${IMAGE_ROOTFS}/etc/profile  
 }
 
 ROOTFS_POSTPROCESS_COMMAND += "rootfs_postprocess;"

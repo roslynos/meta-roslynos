@@ -1,2 +1,2 @@
 # Set host name for using the PR service
-PRSERV_HOST = "huxley:8585" 
+PRSERV_HOST = "localhost:0"
