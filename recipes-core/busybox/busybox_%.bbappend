@@ -5,3 +5,7 @@ SRC_URI:append:roslynos = " \
     file://less.cfg \
     file://udhcpd.cfg \
 "
+
+RDEPENDS:${PN} = "\
+    busybox \
+"
